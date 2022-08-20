@@ -1,0 +1,29 @@
+service start docker --> start docker service
+docker build -t first . --> this is use to build image
+docker run -p 3000:300 imageid --name givename -d(this is running background) --rm(if we stop container then it will automatic delete this container)--> it is run container (ex->docker run -p 3000:3087 -d --rm --name secondcontainer secondtest)
+docker ps --> show all running container
+docker ps -a --> it will show all exited docker container
+docker stop containerid -> stop run container
+
+docker image prune :-> it will remove all unknow images
+docker image prune -a :-> it will remove all images
+
+docker-compose up -d : run and start compse file
+docker-compose down : run and stop compse file
+
+host.docker.internal --> this is use to communicate docker container to local machine
+docker inspect <containerid> --> it will all details of container like ip 
+
+command:
+
+A) below command for run mongo container with no data lost
+docker run --name mongodb -d --rm --network goal-net -v data:/data/db mongo
+
+B) 
+
+docker run --name goal-backend  --rm -d --network goal-net -p 4000:4000 -v /mnt/c/Users/SUTHARG/Desktop/Ganesh/learning/Docker/six/backend:/six -v:/six/node_modules -v logs:/six/logs goal-node
+
+
+docker run --name goal-frontent --rm -p 3000:3000 goal-react
+
+C:/Users/SUTHARG/Desktop/Ganesh/learning/Docker/six/backend
